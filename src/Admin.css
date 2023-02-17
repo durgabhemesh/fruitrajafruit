@@ -1,0 +1,85 @@
+.Container{
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    flex-direction: column;
+    border: #282c34;
+    color: teal;
+    background-color: black;
+    width: 100%;
+    padding-bottom: 30px;
+    
+  
+    margin-top: 50px;
+    border-radius: 50px;
+  }
+  
+  .generate{
+    width: 100px;
+    color:white;
+    background-color: teal;
+    border-color: teal;
+    border: transparent;
+    border-radius: 20px;
+    border-style: solid;
+  }
+  .generate:hover{
+    background-color: red;
+    transition-duration: 0.5s;
+  }
+  .reset{
+    margin-top: 20px;
+    width: 100px;
+    color:white;
+    background-color: teal;
+    border-color: teal;
+    border: transparent;
+    border-radius: 20px;
+    border-style: solid;
+  }
+  .reset:hover{
+    background-color: red;
+    transition-duration: 0.5s;
+  }
+  
+  body{
+    background-color: #fff;
+    
+  }
+  .letsplay{
+    color: rgb(36, 243, 243);
+  }
+  .gameover{
+    color: rgb(232, 54, 54);
+  }
+  .NumberH1{
+    color: rgb(232, 54, 54);
+  }
+  .imag{
+    width: 100px;
+  }
+  .Bsub{
+   border: transparent;
+   color: teal;
+   background-color: #282c34;
+
+  }
+  
+  @media screen and (min-width: 580px) {
+    .Container{
+      display: flex;
+      justify-content: center;
+      align-items: center ;
+      flex-direction: column;
+      border: #282c34;
+      color: teal;
+      background-color: black;
+      width: 500px;
+      padding-bottom: 30px;
+      margin-left: 450px;
+      
+    
+      margin-top: 50px;
+      border-radius: 50px;
+    }
+  }
