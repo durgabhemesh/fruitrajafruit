@@ -49,7 +49,7 @@ function App() {
   return (
     <>
     <Routes>
-    <Route path="/" element={<Admin onData={Number()}/>}/>
+    <Route path="/fruitrajafruit" element={<Admin onData={Number()}/>}/>
    
   </Routes>
    
