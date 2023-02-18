@@ -29,7 +29,7 @@ const Admin = (props) => {
   const[passi,setPassi]=useState('')
   const pass=(e)=>{
     setPassi(e.target.value)
-console.log(passi)
+
   }
 const reset=()=>{
   setCount(0)
@@ -42,11 +42,11 @@ const reset=()=>{
 
 const Sub=(e)=>{
   e.preventDefault();
-  if(passi==='badri'){
+  if(passi==='frf@7394'){
     setFlag(true)
   }
   setPassi('')
-  console.log('clickec')
+  
 
 }
   return (
