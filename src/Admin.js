@@ -77,7 +77,7 @@ visible={true}
     </div>
     <form onSubmit={Sub} >
       <h3 >Admin Login</h3>
-         <input onChange={pass} type='text'></input>
+         <input onChange={pass} type='password'></input>
          <button className='Bsub'>Submit</button>
         </form>
      
