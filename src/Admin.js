@@ -26,24 +26,20 @@ const Admin = (props) => {
        console.log(resapi)
   }
 
-  const df=async()=>{
+  // const df=async()=>{
 
-    const res=await fetch('https://juices-74cd7-default-rtdb.firebaseio.com/Juices/j3.json')
-    const resData=await res.json()
+  //   const res=await fetch('https://juices-74cd7-default-rtdb.firebaseio.com/Juices/j3.json')
+  //   const resData=await res.json()
   
-    console.log(resData.name)
-    setNu(resData.name)
-  }
+  //   console.log(resData.name)
+  //   setNu(resData.name)
+  // }
   const[passi,setPassi]=useState('')
   const pass=(e)=>{
     setPassi(e.target.value)
 
   }
-  const blast=()=>{
-    fetchi()
-    df()
-
-  }
+  
 const reset=()=>{
   setCount(0)
   setNumber()
@@ -55,7 +51,7 @@ const reset=()=>{
 
 const Sub=(e)=>{
   e.preventDefault();
-  if(passi==='frf@7394'){
+  if(passi==='12345'){
 
     setFlag(true)
     setPassi('')
@@ -63,30 +59,86 @@ const Sub=(e)=>{
   
   
 }
-const getNumber=()=>{
-  setLoading(true)
 
-  setTimeout(()=>{
-    setCount(count+1)
-    setNumber(Math.floor(Math.random() * 30))
-    fetchi()
-    df()
-    setData((pdata)=>{
-      return[number,'-',...pdata]
-    })
+// const df=async()=>{
+
+//   const res=await fetch('https://juices-74cd7-default-rtdb.firebaseio.com/Juices/j3.json')
+//   const resData=await res.json()
+
+//   console.log(resData.name)
+//   setNum(resData.name)
+//   setCount(count+1)
+//   // setData((pdata)=>{
+//   //       return[num,'-',...pdata]
+//   //     })
+// }
+// setInterval(()=>{
+//   df()
+// },1000)
+const getNumber=async()=>{
+  console.log('clicked')
+  // setLoading(true)
+
+  // setTimeout(()=>{
+    
+  //   setNumber(Math.floor(Math.random() * 30))
+    
+    
+  //   setData((pdata)=>{
+  //     return[number,'-',...pdata]
+  //   })
    
-    setLoading(false)
-  },10000)
+  //   setLoading(false)
+  // },100)
+  console.log('start')
+  // setLoading(true)
   
+  const api=await fetch('https://juices-74cd7-default-rtdb.firebaseio.com/Juices/j3.json',{
+        method: 'PATCH',
+        body: JSON.stringify({
+          name: (Math.floor(Math.random() * 30))
+        }),
+        headers:{
+            'content-type':'application.json'
+        }
+       })
+       
+       const resapi=api.json()
+       console.log(resapi)
+       console.log('end')
+      //  setLoading(true)
+      
+      // setLoading(false)
+       
+       
+ 
+  setCount(count+1)
+ 
   
  
   
   
 
 }
-useEffect(()=>{
-  fetchi()
-},[count])
+
+const[num,setNum]=useState()
+
+const df=async()=>{
+
+  const res=await fetch('https://juices-74cd7-default-rtdb.firebaseio.com/Juices/j3.json')
+  const resData=await res.json()
+
+  console.log(resData.name)
+  setNum(resData.name)
+  
+  // setData((pdata)=>{
+  //       return[num,'-',...pdata]
+  //     })
+}
+setInterval(()=>{
+  df()
+},10000)
+
   return (
     
         <>
@@ -94,21 +146,12 @@ useEffect(()=>{
     <div className='Container'>
      
      
-     {count===6 ? <h2 className= 'gameover'>Game Over</h2>  : <h2 className= 'letsplay'>Let's Play</h2> } 
-     <h1 className='threedots'>{loading ? <ThreeDots 
-height="80" 
-width="80" 
-radius="9"
-color="#4fa94d" 
-ariaLabel="three-dots-loading"
-wrapperStyle={{}}
-wrapperClassName=""
-visible={true}
- /> : <h1 className='NumberH1'>{nu}</h1> }</h1>
- {number}
- {count!=5 &&
+     <h1 className='NumberH1'>{num}</h1> 
+ 
+ 
+ 
 <button className='generate' disabled={flag===false} onClick={()=>getNumber()}>Generate</button>
-}
+
 {count===5 && <button className='reset' onClick={()=>reset()}>Reset</button>}
 {data &&
 <h3>Last Numbers
