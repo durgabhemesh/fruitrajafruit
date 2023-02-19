@@ -50,6 +50,7 @@ function App() {
     <>
     <Routes>
     <Route path="/fruitrajafruit" element={<Admin onData={Number()}/>}/>
+    <Route path="/fruitrajafruit/user" element={<User />}/>
    
   </Routes>
    
